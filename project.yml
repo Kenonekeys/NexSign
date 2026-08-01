@@ -1,0 +1,18 @@
+name: NexSign
+options:
+  bundleIdPrefix: com.krn11ikiowo
+configs:
+  Debug: debug
+  Release: release
+settings:
+  IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+targets:
+  NexSign:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    bundleId: com.krn11ikiowo.NexSign
+    sources:
+      - path: Sources/NexSign
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.krn11ikiowo.NexSign
