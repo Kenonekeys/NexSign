@@ -1,24 +1,20 @@
-# NexSign iOS app template
+# NexSign — iOS IPA Signer (UI)
 
-This repository contains a minimal iOS app template (SwiftUI) plus helper files to integrate zsign for IPA signing.
+This update transforms the template into a simple IPA signer app UI modeled visually after apps like Ksign or Feather. It intentionally does not perform any signing on-device. Instead, it's an attractive, modern UI that lists IPA files and provides a placeholder Sign action for future integration with zsign or remote signing services.
 
-What this provides
-- XcodeGen project definition (project.yml) so you can generate an Xcode project locally.
-- Minimal SwiftUI app source in Sources/NexSign (Document picker to choose an IPA file).
-- A shell script to sign an IPA using zsign (scripts/sign_with_zsign.sh).
-- README with setup and usage instructions.
+What's included
+- Updated SwiftUI UI (Sources/NexSign/ContentView.swift) with a clean header, gradient background, list of IPAs, and prominent action buttons.
+- The Sign button is disabled until an IPA is selected; pressing Sign currently performs a placeholder action.
 
-Notes
-- iOS apps cannot run codesigning tools on-device. This template does not perform signing on-device — it includes a helper zsign script to run on macOS where zsign is available.
-- To generate the Xcode project install XcodeGen and run `xcodegen` in the repo root.
+How to run
+1) Generate the Xcode project and open it (requires XcodeGen):
+   xcodegen
+   open NexSign.xcodeproj
 
-Files added:
-- project.yml (XcodeGen project)
-- Info.plist
-- Sources/NexSign/App.swift
-- Sources/NexSign/ContentView.swift
-- scripts/sign_with_zsign.sh
-- README.md
-- .gitignore
-- LICENSE (MIT)
+2) In Xcode, pick a team and device to run; the app uses document picker to add IPA files from Files.
+
+Next steps you might want
+- Hook the Sign button to a signing flow (e.g., upload to a signing server or call a local script via a companion macOS app/extension).
+- Add animations, previews for IPA icons, or metadata extraction from the IPA bundle.
+- Add a GitHub Actions workflow to run zsign on macOS runners for CI signing.
 
