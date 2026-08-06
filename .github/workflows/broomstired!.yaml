@@ -1,0 +1,16 @@
+name: Install Copilot CLI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-copilot-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
