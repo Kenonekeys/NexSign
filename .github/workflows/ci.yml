@@ -1,0 +1,36 @@
+name: CI - Build server
+
+on:
+  push:
+    branches:
+      - feature/apple-id-signing
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Swift
+        uses: actions/setup-swift@v1
+        with:
+          swift-version: '5.7'
+      - name: Build Vapor server
+        run: |
+          cd server
+          swift build -c release
+
+  build-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      - name: Install gems
+        run: |
+          cd worker
+          gem install bundler
+          bundle install
