@@ -1,20 +1,46 @@
-# NexSign — iOS IPA Signer (UI)
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>NexSign — Apple ID Signing</title>
+    <style>
+      body { font-family: Arial, Helvetica, sans-serif; max-width: 720px; margin: 40px auto; }
+      label { display:block; margin-top: 8px }
+    </style>
+  </head>
+  <body>
+    <h1>NexSign — Apple ID Signing (demo)</h1>
+    <form id="form">
+      <label>Bundle ID
+        <input name="bundleId" required placeholder="com.example.app" />
+      </label>
+      <label>Common Name (optional)
+        <input name="commonName" placeholder="Developer Name" />
+      </label>
+      <button type="submit">Request Development Certificate</button>
+    </form>
 
-This update transforms the template into a simple IPA signer app UI modeled visually after apps like Ksign or Feather. It intentionally does not perform any signing on-device. Instead, it's an attractive, modern UI that lists IPA files and provides a placeholder Sign action for future integration with zsign or remote signing services.
+    <pre id="out"></pre>
 
-What's included
-- Updated SwiftUI UI (Sources/NexSign/ContentView.swift) with a clean header, gradient background, list of IPAs, and prominent action buttons.
-- The Sign button is disabled until an IPA is selected; pressing Sign currently performs a placeholder action.
-
-How to run
-1) Generate the Xcode project and open it (requires XcodeGen):
-   xcodegen
-   open NexSign.xcodeproj
-
-2) In Xcode, pick a team and device to run; the app uses document picker to add IPA files from Files.
-
-Next steps you might want
-- Hook the Sign button to a signing flow (e.g., upload to a signing server or call a local script via a companion macOS app/extension).
-- Add animations, previews for IPA icons, or metadata extraction from the IPA bundle.
-- Add a GitHub Actions workflow to run zsign on macOS runners for CI signing.
-
+    <script>
+      const form = document.getElementById('form')
+      const out = document.getElementById('out')
+      form.addEventListener('submit', async e => {
+        e.preventDefault()
+        const data = Object.fromEntries(new FormData(form))
+        out.textContent = 'Requesting...'
+        try {
+          const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          })
+          const json = await res.json()
+          out.textContent = JSON.stringify(json, null, 2)
+        } catch (err) {
+          out.textContent = String(err)
+        }
+      })
+    </script>
+  </body>
+</html>
