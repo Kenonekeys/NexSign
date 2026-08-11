@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - worker
+    environment:
+      - WORKER_URL=http://worker:4567
+  worker:
+    build: ./worker
+    volumes:
+      - ./worker/tmp:/tmp
+    environment:
+      # Required secrets (set these in your deployment / CI environment)
+      - APP_STORE_CONNECT_ISSUER_ID
+      - APP_STORE_CONNECT_KEY_ID
+      - PRIVATE_KEY_BASE64
