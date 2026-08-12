@@ -1,15 +1,18 @@
-# Xcode / macOS
-.DS_Store
-DerivedData/
+# Xcode
+
+# Build products
 build/
-*.xcworkspace
-xcuserdata/
+DerivedData/
+
+# Packages
+*.xcframework
+
+# User settings
+*.xcuserstate
 
 # Swift Package Manager
-/.build/
+Packages/
 
-# XcodeGen
-*.xcodeproj
-
-# macOS
-*.swp
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace

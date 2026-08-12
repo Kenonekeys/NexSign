@@ -1,0 +1,6 @@
+// Placeholder project.pbxproj for Xcode template
+// This is a minimal placeholder so the Template.xcodeproj directory exists in the repo.
+// Replace with a real Xcode project if you want.
+{
+	// Project placeholder
+}
