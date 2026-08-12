@@ -1,0 +1,62 @@
+:root {
+    --bg: #0d1117;
+    --bg-alt: #161b22;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #00aaff;
+    --accent-hover: #33bbff;
+    --border: #30363d;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    color: var(--accent);
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+#nexsign-container {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#sign-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+#sign-btn:hover {
+    background: var(--accent-hover);
+}
+
+#status-box {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+#download-box {
+    margin-top: 25px;
+}
+
+iframe {
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
