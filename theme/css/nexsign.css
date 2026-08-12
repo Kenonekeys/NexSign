@@ -1,0 +1,13 @@
+iframe {
+    border: none;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
