@@ -1,0 +1,12 @@
+[book]
+title = "Makimakimakinon Docs"
+author = "Jeremiah"
+description = "Documentation site powered by mdBook"
+language = "en"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
