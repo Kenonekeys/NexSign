@@ -27,12 +27,13 @@ jobs:
 
       - name: Build mdBook
         run: |
-          mdbook build nexsign-docs
+          mdbook build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: nexsign-docs/book
+          path: book
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
