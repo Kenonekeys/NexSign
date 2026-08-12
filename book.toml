@@ -10,5 +10,5 @@ create-missing = true
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "dark"
-additional-css = ["theme/css/nexsign.css"]
+additional-css = ["theme/css/nexsign.css", "theme/css/nexsign-dark.css"]
 additional-js  = ["theme/js/nexsign.js"]
