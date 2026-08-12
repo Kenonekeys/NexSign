@@ -1,3 +1,27 @@
+#nexsign-container {
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+#sign-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+#status-box {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#download-box {
+    margin-top: 25px;
+}
+
 iframe {
     border: none;
     margin-top: 20px;
