@@ -1,12 +1,14 @@
 [book]
-title = "Makimakimakinon Docs"
-author = "Jeremiah"
-description = "Documentation site powered by mdBook"
+title = "NexSign Documentation"
+author = "Kenonekeys"
+description = "Documentation for the NexSign IPA Signing System"
 language = "en"
 
 [build]
-build-dir = "book"
+create-missing = true
 
 [output.html]
 default-theme = "light"
-preferred-dark-theme = "navy"
+preferred-dark-theme = "dark"
+additional-css = ["theme/css/nexsign.css"]
+additional-js  = ["theme/js/nexsign.js"]
